@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "OnFruit",
+			"path": "."
+		},
+		{
+			"name": "onfruit",
+			"path": "C:/Users/mf/Pictures/onfruit"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "OnFruit"
+	}
+}

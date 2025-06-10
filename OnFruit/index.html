@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://js.puter.com/v2/"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize welcome message
+    puter.ai.chat({
+      welcome: "👋 Hi! Welcome to OnFruit. How can I help you today?"
+    });
+
+    // Send a custom conversation
+    puter.ai.chat(
+  `You are a business assistant that helps users summarize and improve content.
+Here is the 'Our Story' section of our website:
+<h2>Our Story</h2>
+<p>The idea for Onfruit was born in a local market, where we noticed how many small fruit farmers struggle to reach modern consumers. Yeabsira, a computer science student, teamed up with friends to create a platform that connects local growers directly to urban buyers. Inspired by seeing food waste and pricing issues firsthand, we wanted to bring transparency and tech to the fresh food industry. We believe that fresh, local fruit should be accessible, traceable, and sustainable—for everyone. Onfruit is our way of giving power back to farmers and bringing communities closer to their food sources.</p>
+Can you improve this and make it more engaging for our audience?`
+).then(response => {
+  document.getElementById("chatResponse").innerText = response;
+}).catch(error => console.error("Error:", error));
+
+
+    // Send manual message
+    window.sendMessage = function () {
+      let userInput = document.getElementById("userMessage").value;
+      puter.ai.chat(userInput).then(response => {
+        document.getElementById("chatResponse").innerText = response;
+      }).catch(error => console.error("Error:", error));
+    };
+  });
+</script>
+<body>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+    🌙
+</button>
+
+<!-- Add this Back to Top button just before </body> -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+   <section id="hero">
+<h1><b><span style="color: yellow;">On</span><span style="color: green;">Fruit</span></b></h1>
+    <img src="logo.png" alt="">
+<ul>
+    
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#product">Product</a></li>
+    <li><a href=".testimonial">Testimonial</a></li>
+    <li><a href="#About">About</a></li>
+    <li><a href="#chatbot-placeholder">Chatbot</a></li>
+    <li><a href="#contact-section">Contact</a></li>
+</ul>
+<button class="getstart"><h3>Get Start</h3></button>
+</section>
+<!-- Place this just below your hero section or above main content -->
+<div class="brand-bar">
+  <div class="brand-bar-track">
+    <div class="brand-slogan">Fresh. Local. Trusted.</div>
+    <div class="brand-slogan">Empowering Farmers.</div>
+    <div class="brand-slogan">Delivered With Care.</div>
+    <!-- Add more slogans if you wish -->
+  </div>
+</div>
+ <section id="About">
+        <h2>Our Story</h2>
+<p>
+     The idea for Onfruit was born in a local market,
+      where we noticed how many small fruit farmers struggle to reach modern consumers .
+       Yeabsira, a computer science student, teamed up with friends to create a platform
+        that connects local growers directly to urban buyers . Inspired by seeing food
+         waste and pricing issues firsthand, we wanted to bring transparency and tech to 
+         the fresh food industry. We believe that fres h, local fruit should be accessible,
+          traceable, and sustainable—for everyone. Onfruit is our way of giving power back to 
+          farmers and bringin g communities closer to their food sources.</p>
+
+<div class="mivi">
+<h3>Vision:</h3>         
+ <p> We imagine a future where every fruit we eat supports a local farmer and strengthens 
+    a sustainable food chain.</p>
+    <img src="logos-ongruit.png" alt="">
+</div>
+<div class="mission">
+<h3> Mission:</h3>   
+ <p>To empower local fruit growers through technology, and deliver healthy,
+     fresh produce directly to communities.</p>
+<img src="mission-onfruit.png" alt="">
+
+
+</div>
+
+    </section>
+<main>
+<!-- Add this just before <section id="product"> -->
+<div class="audience-toggle-container">
+  <label class="audience-switch">
+    <input type="checkbox" id="audienceToggle">
+    <span class="slider"></span>
+    <span class="labels" data-farmer="For Farmers" data-user="For Users"></span>
+  </label>
+</div>
+<section id="product">
+  <div id="userContent" class="audience-content show">
+    <div class="fruits-scroll">
+      <div class="fruit-card">
+        <img src="apple.png" alt="Apple">
+        <h4>Apple</h4>
+        <p>Fresh, crisp apples packed with vitamins and fiber.</p>
+        <span class="fruit-price">$2.50 / kg</span>
+      </div>
+      <div class="fruit-card">
+        <img src="bannana.jpg" alt="Banana">
+        <h4>Banana</h4>
+        <p>Sweet bananas, a great source of potassium and energy.</p>
+        <span class="fruit-price">$1.80 / kg</span>
+      </div>
+      <div class="fruit-card">
+        <img src="orange.jpg" alt="Orange">
+        <h4>Orange</h4>
+        <p>Juicy oranges, rich in vitamin C for a healthy immune system.</p>
+        <span class="fruit-price">$2.20 / kg</span>
+      </div>
+      <div class="fruit-card">
+        <img src="blueberry.jpg" alt="Blueberry">
+        <h4>Blueberry</h4>
+        <p>Antioxidant-rich blueberries, perfect for snacking or baking.</p>
+        <span class="fruit-price">$4.00 / box</span>
+      </div>
+      <div class="fruit-card">
+        <img src="strobery.jpg" alt="Strawberry">
+        <h4>Strawberry</h4>
+        <p>Sweet strawberries, bursting with flavor and vitamin C.</p>
+        <span class="fruit-price">$3.50 / box</span>
+      </div>
+      <div class="fruit-card">
+        <img src="ovallli.jpg" alt="Oval Fruit">
+        <h4>Concorde Pears</h4>
+        <p>Exotic oval fruit, delicious and full of nutrients.</p>
+        <span class="fruit-price">$2.90 / kg</span>
+      </div>
+    </div>
+  </div>
+  <div id="farmerContent" class="audience-content">
+    <div class="fruits-scroll">
+      <div class="fruit-card">
+        <img src="farmer1.avif" alt="Farmer">
+        <h4>Sell Your Harvest</h4>
+        <p>Connect directly with buyers and get fair prices for your fresh produce.</p>
+      </div>
+      <div class="fruit-card">
+        <img src="farmer2.jpg" alt="Farmer">
+        <h4>Grower Dashboard</h4>
+        <p>Track your sales, manage inventory, and access farming resources.</p>
+      </div>
+      <div class="fruit-card">
+        <img src="farmer3.jpg" alt="Farmer">
+        <h4>Community Support</h4>
+        <p>Join a network of local farmers and share best practices.</p>
+      </div>
+      <div class="fruit-card">
+        <img src="farmer4.jpg" alt="Farmer">
+        <h4>Market Insights</h4>
+        <p>Get real-time data on demand, pricing, and consumer trends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-question">How do I order fresh fruit?</button>
+      <div class="faq-answer">
+        <p>Simply browse our product section, add your favorite fruits to the cart, and proceed to checkout. We deliver fresh fruit directly to your door.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How can farmers join the platform?</button>
+      <div class="faq-answer">
+        <p>Farmers can sign up by clicking the "For Farmers" toggle and following the registration process. Our team will guide you through onboarding.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Is the produce organic?</button>
+      <div class="faq-answer">
+        <p>Many of our farmers use organic practices. Look for the "organic" label on product cards or contact us for more information about specific items.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="team-section">
+  <h2>Meet the Team</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="me.jpg" alt="Your Name">
+      <h4>Yeabsira Teshome</h4>
+      <p class="role">Founder & Developer</p>
+      <p class="bio">Fruit lover, code enthusiast, and the mind behind OnFruit. Loves hiking and fresh mangoes.</p>
+    </div>
+    <div class="team-card">
+      <img src="hana.png" alt="Peer 1 Name">
+      <h4>Hanna Getachew</h4>
+      <p class="role">UI/UX Designer</p>
+      <p class="bio">Passionate about beautiful interfaces and user-friendly design. Enjoys painting and jazz music.</p>
+    </div>
+    <div class="team-card">
+      <img src="ermias.png" alt="Peer 2 Name">
+      <h4>Ermias Molla</h4>
+      <p class="role">Marketing Lead</p>
+      <p class="bio">Spreads the word about OnFruit. Avid cyclist and always up for a fruit smoothie challenge.</p>
+    </div>
+  </div>
+</section>
+
+<section id="chatbot-placeholder">
+  <h2>OnFruit Chatbot</h2>
+  <div class="chatbot-window">
+    <div class="chatbot-messages">
+      <div class="chatbot-bubble user">Hi! How can I order apples?</div>
+      <div class="chatbot-bubble bot">Welcome! You can browse our products and add apples to your cart. 😊</div>
+      
+    </div>
+    <div class="chatbot-input-row">
+      <input type="text" id="userMessage" placeholder="Type your message here">
+<button onclick="sendMessage()">Send</button>
+<p id="chatResponse"></p>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact-section">
+  <h2>Contact Us</h2>
+  <form id="contactForm" class="contact-form" novalidate>
+    <div class="form-group">
+      <label for="contactName">Name</label>
+      <input type="text" id="contactName" name="name" required>
+      <span class="form-error" id="nameError"></span>
+    </div>
+    <div class="form-group">
+      <label for="contactEmail">Email</label>
+      <input type="email" id="contactEmail" name="email" required>
+      <span class="form-error" id="emailError"></span>
+    </div>
+    <div class="form-group">
+      <label for="contactMessage">Message</label>
+      <textarea id="contactMessage" name="message" rows="4" required></textarea>
+      <span class="form-error" id="messageError"></span>
+    </div>
+    <button type="submit" class="contact-submit">Send Message</button>
+  </form>
+</section>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>© 2023 OnFruit</p>
+        <div class="footer-links">
+            <a href="tobiyawyeabsira@gmail.com" target="_blank" rel="noopener">Email</a>
+            <a href="https://github.com/Yabtob/onfruit.git" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/yabtob" target="_blank" rel="noopener">LinkedIn</a>
+             <a href="#" class="footer-policy">Privacy Policy</a>
+            <a href="#" class="footer-policy">Terms</a>
+             </div>
+        <div class="visitor-counter">
+            Visits: <span id="visitCount">0</span>
+        </div>
+    </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</header>
+</html>
